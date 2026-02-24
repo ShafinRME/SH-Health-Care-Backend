@@ -48,7 +48,7 @@ const createAdmin = async (req: Request): Promise<Admin> => {
         role: UserRole.ADMIN
     }
 
-    const result = await prisma.$transaction(async (transactionClient) => {
+    const result = await prisma.$transaction(async (transactionClient: any) => {
         await transactionClient.user.create({
             data: userData
         });
@@ -79,7 +79,7 @@ const createDoctor = async (req: Request): Promise<Doctor> => {
         role: UserRole.DOCTOR
     }
 
-    const result = await prisma.$transaction(async (transactionClient) => {
+    const result = await prisma.$transaction(async (transactionClient: any) => {
         await transactionClient.user.create({
             data: userData
         });
